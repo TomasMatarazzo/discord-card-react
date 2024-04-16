@@ -10,12 +10,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.gato{
-  transition: background-color 0.3s; 
-}
-
-.gato :hover {
-  background-color: #484848;
-  overflow: hidden;
-}

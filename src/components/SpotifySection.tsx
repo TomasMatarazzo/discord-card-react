@@ -1,7 +1,6 @@
 import BaseSection from "./BaseSection";
 import SectionTitle from "./SectionTitle";
 import SeekBar from "./SeekBar";
-import SpotifyLogo from "./SpotifyLogo";
 /**
  * Renders a section displaying Spotify song information.
  *
@@ -15,10 +14,6 @@ import SpotifyLogo from "./SpotifyLogo";
  * @param {number} endTimeMs - The end time of the song in milliseconds
  * @return {JSX.Element} The rendered Spotify section
  */
-
-interface ColorVariants {
-  [key: string]: string;
-}
 const SpotifySection = ({
   title,
   song,
@@ -28,7 +23,6 @@ const SpotifySection = ({
   trackUrl,
   startTimeMs,
   endTimeMs,
-  accentColor
 }: {
   title?: string;
   song: string;
@@ -38,14 +32,7 @@ const SpotifySection = ({
   trackUrl?: string;
   startTimeMs?: number;
   endTimeMs?: number;
-  accentColor?:string;
 }) => {
-
-  const colors :ColorVariants = {
-    "#8500d3": 'bg-[#8500d3] hover:bg-[#484848]'
-  } ;
-
-
   return (
     <BaseSection>
       <div className="flex justify-between" style={{ marginBottom: 6 }}>
@@ -119,30 +106,14 @@ const SpotifySection = ({
       )}
 
       {trackUrl && (
-        <section className="flex relative">
         <a
           target="_blank"
           href={trackUrl}
-          className={` block ${colors[accentColor]} w-[80%] text-sm py-[6px] px-[4px] text-center mt-[8px] rounded-md text-white hover:bg-[#484848] mr-2`}
+          className="block w-full text-sm bg-[#383838] py-[6px] px-[4px] text-center mt-[8px] rounded-md text-white hover:bg-[#484848]"
           aria-label={`Play ${song} by ${artist} on Spotify`}
-          
         >
-          <div className="flex justify-center items-center gap-2">
-          <SpotifyLogo></SpotifyLogo>
           Play on Spotify
-          </div>
         </a>
-                <a
-          target="_blank"
-          href={trackUrl}
-          className={` block ${colors[accentColor]} w-[15%] text-sm py-[6px] px-[4px] text-center mt-[8px] rounded-md text-white`}
-          aria-label={`Play ${song} by ${artist} on Spotify`}
-        >
-          <div className="flex justify-center items-center gap-2">
-          <SpotifyLogo></SpotifyLogo>
-          </div>
-        </a>
-    </section> 
       )}
     </BaseSection>
   );

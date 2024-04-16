@@ -7,5 +7,4 @@ export interface SpotifySectionProps {
   trackUrl?: string;
   startTimeMs?: number;
   endTimeMs?: number;
-  accentColor?:string;
 }
