@@ -1,0 +1,9 @@
+
+.button {
+    transition: background-color 0.3s; 
+  }
+  
+.button :hover {
+    background-color: #484848;
+    overflow: hidden;
+  }
